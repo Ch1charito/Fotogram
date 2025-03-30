@@ -5,3 +5,58 @@
     position: relative;
     scroll-behavior: smooth;
   }
+
+  html{
+    font-family: "Varela Round", sans-serif;
+  }
+
+  header{
+    height: 120px;
+    width: 100%;
+    background-color: #082028 ;
+    display: flex;
+    align-items: center;
+    img{
+      height: 40px;
+      margin-left: 30px;
+    }
+  }
+  main{
+    height: 100vh;
+    width: 100%;
+    background-color: #05171e;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    h1{
+      margin-top: 20px;
+      @media (max-width: 510px ){
+        font-size: 1.2rem;
+      }
+      
+    }
+    img{
+      width: 300px;
+      height: auto;
+    }
+  }
+  footer{
+    width: 100%;
+    height: 120px;
+    background-color: #082028;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: white;
+    img{
+      height: 40px;
+    }
+    a:hover{
+      cursor: pointer;
+      filter: drop-shadow(0px 0px 4px #ffffff);
+    }
+    
+  }
+  
