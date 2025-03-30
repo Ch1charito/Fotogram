@@ -25,7 +25,7 @@ function render() {
     for (let i = 0; i < img.length; i++){
         contentRef.innerHTML += `
         <div>
-            <img src="${img} alt="Bild ${i + 1}">
+            <img src="${img[i]} alt="Bild ${i + 1}">
         </div>`
     }
 };
