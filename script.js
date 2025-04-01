@@ -13,18 +13,46 @@ let img = [
   "./img/bilder/image12.jpg",
 ];
 
+
+
 function render() {
   let contentRef = document.getElementById("content");
   for (let i = 0; i < img.length; i++) {
-    contentRef.innerHTML += `
-        <div onclick="toggleOverlay()">
-            <img src="${img[i]}" alt="Bild ${i + 1}">
-        </div>`;
+    contentRef.innerHTML += singlePictures(i);
   }
 }
 
-function toggleOverlay() {
-  let overlayRef = document.getElementById("imgoverlay");
+function singlePictures(i) {
+    return `<div onclick="toggleOverlay(${i})">
+                <img src="${img[i]}" alt="Bild ${i + 1}">
+            </div>`;
+    
+}
 
+function toggleOverlay(index) {
+  let overlayRef = document.getElementById("imgoverlay");
+  overlayRef.innerHTML = "";
+  overlayRef.innerHTML += `<button class="close-btn" onclick="toggleOverlay(${index})">X</button>
+                            <div class="cardview">
+                              <button onclick="moveLeft()" class="switch-btn"><</button>
+                              <img id="overlaypic" src="${img[index]}">
+                              <button onclick="moveRight()" class="switch-btn">></button>
+                            </div>`;
   overlayRef.classList.toggle("d_none");
+  
+}
+
+function moveRight(index) {
+  let moveRightRef = document.getElementById("overlaypic");
+  moveRightRef.innerHTML += `<button class="close-btn" onclick="toggleOverlay(${index + 1})">X</button>
+                              <div class="cardview">
+                                <button onclick="moveLeft()" class="switch-btn"><</button>
+                                <img id=overlaypic src="${img[index]}">
+                                <button onclick="moveRight()" class="switch-btn">></button>
+                              </div>`
+
+}
+
+function moveLeft() {
+
 }
